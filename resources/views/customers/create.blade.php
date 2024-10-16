@@ -11,22 +11,39 @@
         <h1>Add Customer</h1>
         <form action="{{ route('customers.store') }}" method="POST">
             @csrf
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" required>
-
-            <label for="address">Address</label>
-            <input type="text" name="address" id="address" required>
-
-            <label for="mobile">Mobile</label>
-            <input type="text" name="mobile" id="mobile" required>
-
-            <label for="jar_taken">Number of Jars Taken</label>
-            <input type="number" name="jar_taken" id="jar_taken" required>
-
-            <label for="amount_paid">Amount Paid</label>
-            <input type="number" step="0.01" name="amount_paid" id="amount_paid" required>
-
-            <button type="submit">Add Customer</button>
+            <div class="form-group half">
+                <label for="type">Address</label>
+                <select name="address" id="type" required>
+                    <option value="">Select</option>
+                    <option value="1">Ghatia</option>
+                    <option value="2">Nagrakata</option>
+                </select>
+            </div>
+            <div class="form-group half">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div class="form-group half">
+                <label for="mobile">Mobile</label>
+                <input type="text" name="mobile" id="address" required>
+            </div>
+            <div class="form-group full">
+                <label for="business-duration">Amount Paid</label>
+                <div style="display: flex; gap: 10px;">
+                    <input type="number" name="amount_paid" placeholder="" min="0">
+                </div>
+                <label for="business-duration">Number of Jars Taken</label>
+                <div style="display: flex; gap: 10px;">
+                    <input type="number" name="jar_taken" placeholder="" min="0">
+                </div>
+                <label for="business-duration">Number of Jars Return</label>
+                <div style="display: flex; gap: 10px;">
+                    <input type="number" name="jar_return" placeholder="" min="0">
+                </div>
+            </div>
+            <div class="form-group full">
+                <button type="submit">Create</button>
+            </div>
         </form>
     </div>
 </body>
